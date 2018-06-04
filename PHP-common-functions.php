@@ -11,7 +11,6 @@ function SearchArrayByValue ($SearchArray, $SearchKey, $SearchValue) {
 
 
 /*	multidimensional array sort by value, 2018-06-04
-	$SortOrder='SORT_DESC'
 	Return: sorted array()
 */
 function SortArrayByValue ($SortArray, $SortKey, $SortOrder='SORT_ASC') {
@@ -19,7 +18,11 @@ function SortArrayByValue ($SortArray, $SortKey, $SortOrder='SORT_ASC') {
     foreach ($SortArray as $key => $row) {
         $Sort[$key] = $row[$SortKey];
     }
-    array_multisort($Sort, $SortOrder, $SortArray);
+    if ( $SortOrder == 'SORT_ASC' ) {
+    	array_multisort($Sort, SORT_ASC, $SortArray);
+    } elseif ( $SortOrder == 'SORT_DESC' ) {
+    	array_multisort($Sort, SORT_DESC, $SortArray);
+    }
     return $SortArray;
 } // END OF -function SortArrayByValue ($SortArray, $SortKey, $SortValue) {-
 // $Result = SortArrayByValue($CustArray, 'name');
