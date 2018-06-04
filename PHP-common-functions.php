@@ -27,6 +27,15 @@ function SortArrayByValue ($SortArray, $SortKey, $SortOrder='SORT_ASC') {
 } // END OF -function SortArrayByValue ($SortArray, $SortKey, $SortValue) {-
 // $Result = SortArrayByValue($CustArray, 'name');
 
+/* To diff between n-dimensional array, 2018-06-04
+    Return: array1 that removed elements from array2
+*/
+function array_diff_values($array1, $array2) {
+    $result = array();
+    foreach($array1 as $values) if(! in_array($values, $array2)) $result[] = $values;
+    return $result;
+}
+//$Result = array_diff_values($SourceArray, $diffArray);
 
 
 // e.g.
