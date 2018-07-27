@@ -70,4 +70,12 @@ print_r($userdb);
 print_r(SortArrayByValue($userdb, 'name'));
 
 
+/* convert string for MSSQL, 2018-07-27
+    Return: array1 that removed elements from array2
+*/
+function ConvertString4MSSQL($str) {
+    $result = str_replace("'", "''" , $str);
+    return $result;
+} // END OF -function ConvertString4MSSQL($str) {-
+
 ?>
