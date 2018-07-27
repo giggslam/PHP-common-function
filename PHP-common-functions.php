@@ -71,7 +71,7 @@ print_r(SortArrayByValue($userdb, 'name'));
 
 
 /* convert string for MSSQL, 2018-07-27
-    Return: array1 that removed elements from array2
+    Return: add single quote ' before single quote '
 */
 function ConvertString4MSSQL($str) {
     $result = str_replace("'", "''" , $str);
