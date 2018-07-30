@@ -1,11 +1,15 @@
 <?php
 
-/*  multidimensional array search by value, 2018-05-20
+/*  multidimensional array search by value, 2018-07-30
     Return: array()
 */
 function SearchArrayByValue ($SearchArray, $SearchKey, $SearchValue) {
     $k = array_search($SearchValue, array_column($SearchArray, $SearchKey));
-    if ($k) return $SearchArray[$k];
+    if ( !($k === false) ) { // prevent index $k = 0 issue
+        return $SearchArray[$k];
+    } else {
+        return NULL;
+    }
 } // END OF -function SearchArrayByValue ($SearchArray, $SearchKey, $SearchValue) {-
 /*
 // e.g.
