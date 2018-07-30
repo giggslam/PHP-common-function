@@ -7,7 +7,29 @@ function SearchArrayByValue ($SearchArray, $SearchKey, $SearchValue) {
     $k = array_search($SearchValue, array_column($SearchArray, $SearchKey));
     if ($k) return $SearchArray[$k];
 } // END OF -function SearchArrayByValue ($SearchArray, $SearchKey, $SearchValue) {-
-// $Result = SearchArrayByValue($CustArray, 'ID', '001');
+/*
+// e.g.
+$CustArray = array(
+    array(
+        'uid' => '100',
+        'name' => 'Sandra Shush',
+        'pic_square' => 'urlof100'
+    ),
+    array(
+        'uid' => '5465',
+        'name' => 'Stefanie Mcmohn',
+        'pic_square' => 'urlof100'
+    ),
+    array(
+        'uid' => '40489',
+        'name' => 'Michael',
+        'pic_square' => 'urlof40489'
+    )
+);
+//print_r($CustArray);
+$Result = SearchArrayByValue($CustArray, 'name', 'Stefanie Mcmohn');
+print_r($Result); exit;
+*/
 
 
 /*	multidimensional array sort by value, 2018-06-04
