@@ -1,5 +1,24 @@
 <?php
 
+/*	Extract Hyperlink from html entities, 2018-07-31
+    e.g. HtmlExtractHyperlink("test<a href="https://www.google.com/">Text</a>test");
+
+    Array ( [Name] => Text [URL] => "https://www.google.com/" )
+*/
+function HtmlExtractHyperlink ($html) {
+	$pattern = '/<a href=(.*)>([^>]*)<\/a>/';
+
+	preg_match($pattern, $html, $matches);
+
+	return array('Name'=>$matches[2], 'URL'=>$matches[1]);
+} // END OF -function HtmlExtractHyperlink ($html) {-
+/*
+// e.g.
+$string = 'PHPZAG PHP <a href="https://www.google.com/">Text</a> AND ARTICLES.';
+$Link = HtmlExtractHyperlink($string);
+print_r($Link); exit;
+*/
+
 /*  multidimensional array search by value, 2018-07-30
     Return: array()
 */
