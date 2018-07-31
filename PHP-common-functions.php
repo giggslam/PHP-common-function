@@ -1,7 +1,22 @@
 <?php
 
+/*	Remove Hyperlink from html entities, 2018-07-31
+	e.g. HtmlExtractHyperlink("test<a href="https://www.google.com/">Text</a>123");
+
+    test 123
+*/
+function HtmlRemoveHyperlink ($html) {
+	$pattern = '/(<a href.*\/a>)/';
+	return preg_replace($pattern, '', $html);
+} // END OF -function HtmlRemoveHyperlink ($html) {-
+/*
+$string = 'PHPZAG PHP <a href="https://www.phpzag.com/">TUTORIALS</a> AND ARTICLES.';
+$b = HtmlRemoveHyperlink($string);
+print($b); exit;
+*/
+
 /*	Extract Hyperlink from html entities, 2018-07-31
-    e.g. HtmlExtractHyperlink("test<a href="https://www.google.com/">Text</a>test");
+    e.g. HtmlExtractHyperlink("test<a href="https://www.google.com/">Text</a>123");
 
     Array ( [Name] => Text [URL] => "https://www.google.com/" )
 */
