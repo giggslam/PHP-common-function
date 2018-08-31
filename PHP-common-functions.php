@@ -163,4 +163,15 @@ $buttons = HtmlExtractButton($html);
 print_r($buttons);
 // Array ( [0] => button1 [1] => button2 [2] => button3 [3] => button4 [4] => button5 [5] => 按鍵6 )
 
+
+/*	Remove Button from html entities, 2018-08-31
+    e.g. HtmlExtractHyperlink("test<button>TextButton</button>123");
+
+    test123
+*/
+function HtmlRemoveButton ($html) {
+    $pattern = '/<button.*<\/button>/';
+    return preg_replace($pattern, '', $html);
+} // END OF -function HtmlRemoveButton ($html) {-
+
 ?>

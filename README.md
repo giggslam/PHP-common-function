@@ -13,3 +13,7 @@ function SortArrayByValue ($SortArray, $SortKey, $SortValue)
 ## Extract HTML entity "Button" value (2018-08-31)
 
 function HtmlExtractButton ($html)
+
+## Remove HTML entity "Button" (2018-08-31)
+
+function HtmlRemoveButton ($html)
