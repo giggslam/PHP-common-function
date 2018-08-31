@@ -1,4 +1,4 @@
-# PHP-common-function (2018-05-21)
+# PHP-common-function (2018-08-31)
 
 Customized common functions for php
 
