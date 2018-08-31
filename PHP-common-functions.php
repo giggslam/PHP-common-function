@@ -138,4 +138,29 @@ function ConvertString4MSSQL($str) {
     return $result;
 } // END OF -function ConvertString4MSSQL($str) {-
 
+
+
+/*	Extract Button from html entities, 2018-08-31
+    e.g. HtmlExtractHyperlink("test<button>TextButton</button>123");
+
+    Array [ TestButton ] ]
+*/
+function HtmlExtractButton ($html) {
+	$pattern = "/<button>([^<]+)<\/button>/";
+
+	preg_match_all("/<button>([^<]+)<\/button>/", $html, $matches);
+
+	if ( $matches ) {
+		return $matches[1];
+
+	} else {
+		return NULL;
+	}
+} // END OF -function HtmlExtractButton ($html) {-
+
+$html = "這是測試<button>button1</button>\n<button>button2</button>\n<button>button3</button>\n<button>button4</button>\n<button>button5</button>\n<button>按鍵6</button>完成測試";
+$buttons = HtmlExtractButton($html);
+print_r($buttons);
+// Array ( [0] => button1 [1] => button2 [2] => button3 [3] => button4 [4] => button5 [5] => 按鍵6 )
+
 ?>
