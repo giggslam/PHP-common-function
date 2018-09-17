@@ -174,4 +174,29 @@ function HtmlRemoveButton ($html) {
     return preg_replace($pattern, '', $html);
 } // END OF -function HtmlRemoveButton ($html) {-
 
+
+/*	Get current week, 2018-09-17
+	start the code to find the starting and ending date of current week
+    Output:	array($this_week_sd, $this_week_ed), e.g. array('2018-09-16','2018-09-22')
+*/
+function GetCurrentWeek () {
+
+    // Start: Monday, End: Sunday
+    // $monday = strtotime("last monday");
+    // $monday = date('w', $monday)==date('w') ? $monday+7*86400 : $monday;
+    // $sunday = strtotime(date("Y-m-d",$monday)." +6 days"); //+6 can be changed to +1,+2...so on acc to your need
+    // $this_week_sd = date("Y/m/d",$monday);
+    // $this_week_ed = date("Y/m/d",$sunday);
+
+    // Start: Sunday, End: Saturday
+    $sunday = strtotime("last sunday");
+    $sunday = date('w', $sunday)==date('w') ? $sunday+7*86400 : $sunday;
+    $saturday = strtotime(date("Y-m-d",$sunday)." +6 days"); //+6 can be changed to +1,+2...so on acc to your need
+    $this_week_sd = date("Y/m/d",$sunday);
+    $this_week_ed = date("Y/m/d",$saturday);
+
+    //echo "Current week range from $this_week_sd to $this_week_ed"; // DEBUG
+
+    return array($this_week_sd, $this_week_ed);
+} // END OF -function GetCurrentWeek () {-
 ?>

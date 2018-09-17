@@ -1,4 +1,4 @@
-# PHP-common-function (2018-08-31)
+# PHP-common-function (2018-09-17)
 
 Customized common functions for php
 
@@ -17,3 +17,7 @@ function HtmlExtractButton ($html)
 ## Remove HTML entity "Button" (2018-08-31)
 
 function HtmlRemoveButton ($html)
+
+## Get starting and ending date of current week (2018-09-17)
+
+function GetCurrentWeek ()
